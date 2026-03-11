@@ -1,25 +1,38 @@
 # Autostay Skills
 
-Autostay 팀 전용 Claude Code 플러그인 마켓플레이스.
+Autostay 팀 전용 Claude 플러그인 마켓플레이스.
 자체 제작 스킬 + 커맨드 + 보호 훅을 제공합니다.
 
 ## 플러그인 목록
 
 | 플러그인 | 대상 | 내용 |
 |----------|------|------|
-| **autostay-common** | 전체 | 보호 훅 (main 보호, 민감파일 차단) + Git 워크플로 커맨드 3개 |
-| **autostay-pm** | PM | PM 스킬 38개 + PM 커맨드 18개 |
+| **autostay-common** | 개발자 전체 | 보호 훅 (main 보호, 민감파일 차단) + Git 워크플로 커맨드 3개 |
+| **autostay-pm** | PM / 전체 | PM 스킬 38개 + PM 커맨드 18개 |
 
 ## 설치
+
+### Claude Cowork (비개발자 권장)
+
+1. 좌측 하단 **Customize** 클릭
+2. **Browse plugins** → **Personal** → **+**
+3. **Add marketplace from GitHub** 선택
+4. `autostay-kr/autostay-skills` 입력
+5. 원하는 플러그인 **Install**
+
+### Claude Code (CLI)
 
 ```bash
 # 1. 마켓플레이스 등록 (최초 1회)
 claude plugin marketplace add autostay-kr/autostay-skills
 
 # 2. 플러그인 설치
-claude plugin install autostay-skills@autostay-common   # 전원 필수
+claude plugin install autostay-skills@autostay-common   # 개발자 필수
 claude plugin install autostay-skills@autostay-pm        # PM
 ```
+
+> **Note**: `autostay-server` 레포에는 `extraKnownMarketplaces`가 설정되어 있어
+> 레포 클론 후 마켓플레이스가 자동 등록됩니다. Step 1 생략 가능.
 
 ## 권장 3rd party 스킬
 
