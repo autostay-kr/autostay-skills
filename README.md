@@ -21,13 +21,21 @@ claude plugin install autostay-skills@autostay-common   # 전원 필수
 claude plugin install autostay-skills@autostay-pm        # PM
 ```
 
-## 권장 3rd party 스킬 (엔지니어링)
+## 권장 3rd party 스킬
 
-아래 스킬은 마켓플레이스에서 직접 설치하세요. 원본 업데이트가 자동 반영됩니다.
+마켓플레이스에서 직접 설치하세요. 원본 업데이트가 자동 반영됩니다.
+
+### Common (전원 권장)
 
 ```bash
-# 백엔드 개발자 권장
 claude skill install find-skills
+claude skill install tdd
+claude skill install docker-deployment
+```
+
+### Backend (백엔드 개발자)
+
+```bash
 claude skill install nestjs-best-practices
 claude skill install graphql-architect
 claude skill install graphql-schema
@@ -37,12 +45,21 @@ claude skill install prisma-client-api
 claude skill install mysql
 claude skill install redis-development
 claude skill install kafka-development
-claude skill install docker-deployment
-claude skill install tdd
 ```
 
 > **Note**: 서버 프로젝트 전용 스킬 (dashboard-builder, dataloader-generator 등 11개)은
 > `autostay-server` 레포의 `.claude/skills/`에 있습니다.
+
+### Frontend (프론트엔드 개발자)
+
+```bash
+claude skill install vercel-react-best-practices
+claude skill install nextjs-app-router
+claude skill install tailwindcss
+claude skill install typescript-strict
+```
+
+> **Note**: 프론트엔드 프로젝트 전용 스킬은 해당 레포의 `.claude/skills/`에 추가 예정.
 
 ## 업데이트
 
