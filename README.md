@@ -10,8 +10,10 @@ Autostay 전용 Claude 플러그인. PM + Marketing 스킬 통합.
 
 1. 좌측 하단 **Customize** 클릭
 2. **Browse plugins** → **Personal** → **+**
-3. **Add marketplace from GitHub** 선택
-4. `autostay-kr/autostay-skills` 입력
+3. **URL로 마켓플레이스 추가** 선택
+4. 아래 둘 중 하나 입력
+   - `https://github.com/autostay-kr/autostay-skills.git`
+   - `https://raw.githubusercontent.com/autostay-kr/autostay-skills/main/.claude-plugin/marketplace.json`
 5. 원하는 플러그인 Install:
    - **autostay-pm** — PM 스킬 (38개 스킬 + 18개 커맨드)
    - **autostay-marketing** — 마케팅 스킬 (31개)
@@ -20,8 +22,8 @@ Autostay 전용 Claude 플러그인. PM + Marketing 스킬 통합.
 
 ```bash
 claude plugin marketplace add autostay-kr/autostay-skills
-claude plugin install autostay-skills@autostay-pm
-claude plugin install autostay-skills@autostay-marketing
+claude plugin install autostay-pm@autostay-skills
+claude plugin install autostay-marketing@autostay-skills
 ```
 
 ---
