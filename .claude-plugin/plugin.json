@@ -1,20 +1,17 @@
 {
   "name": "autostay-skills",
   "version": "2.0.0",
-  "description": "Autostay Team Skills — PM 스킬 38개 + 엔지니어링 스킬 12개 + Git 워크플로 커맨드 3개 + 보호 훅. O2O 세차 구독 서비스 팀 공용 플러그인.",
+  "description": "Autostay Team Skills Marketplace — common, pm, server, all 플러그인 제공",
   "author": {
     "name": "Autostay"
   },
   "keywords": [
+    "autostay",
     "product-management",
     "engineering",
     "nestjs",
     "graphql",
-    "prisma",
-    "autostay",
-    "car-wash",
-    "subscription",
-    "o2o"
+    "prisma"
   ],
   "license": "MIT"
 }

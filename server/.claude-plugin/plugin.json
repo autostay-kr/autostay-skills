@@ -1,0 +1,10 @@
+{
+  "name": "autostay-server",
+  "version": "2.0.0",
+  "description": "Autostay Server — NestJS, GraphQL, Prisma, MySQL, Redis, Kafka, TDD 엔지니어링 스킬 11개",
+  "author": {
+    "name": "Autostay"
+  },
+  "keywords": ["autostay", "nestjs", "graphql", "prisma", "engineering"],
+  "license": "MIT"
+}

@@ -1,0 +1,1 @@
+../../pm/commands/write-stories.md

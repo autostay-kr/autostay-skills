@@ -1,0 +1,10 @@
+{
+  "name": "autostay-pm",
+  "version": "2.0.0",
+  "description": "Autostay PM — 38개 PM 스킬 + 18개 워크플로. 디스커버리, 전략, 실행, 성장, 툴킷.",
+  "author": {
+    "name": "Autostay"
+  },
+  "keywords": ["autostay", "product-management", "pm", "strategy"],
+  "license": "MIT"
+}
