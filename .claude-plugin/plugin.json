@@ -1,0 +1,16 @@
+{
+  "name": "autostay-skills",
+  "version": "1.0.0",
+  "description": "Autostay PM Skills — O2O 세차 구독 서비스를 위한 38개 PM 스킬과 18개 워크플로. 디스커버리, 전략, 실행, 성장, 툴킷.",
+  "author": {
+    "name": "Autostay"
+  },
+  "keywords": [
+    "product-management",
+    "autostay",
+    "car-wash",
+    "subscription",
+    "o2o"
+  ],
+  "license": "MIT"
+}
