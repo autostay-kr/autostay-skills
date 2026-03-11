@@ -1,15 +1,15 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "autostay-skills",
-  "version": "1.0.0",
-  "description": "Autostay PM Skills",
+  "version": "2.0.0",
+  "description": "Autostay Team Skills",
   "owner": {
     "name": "Autostay"
   },
   "plugins": [
     {
       "name": "autostay-skills",
-      "description": "O2O 세차 구독 서비스를 위한 38개 PM 스킬과 18개 워크플로",
+      "description": "PM 스킬 38개 + 엔지니어링 스킬 12개 + Git 워크플로 커맨드 3개 + 보호 훅. 팀 공용 플러그인.",
       "source": "./",
       "category": "product-management"
     }
