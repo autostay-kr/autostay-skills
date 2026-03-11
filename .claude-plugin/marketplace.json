@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "autostay-skills",
-  "version": "2.1.0",
-  "description": "Autostay PM Skills",
+  "version": "3.0.0",
+  "description": "Autostay Skills — PM + Marketing",
   "owner": {
     "name": "Autostay"
   },
@@ -12,6 +12,12 @@
       "description": "PM 스킬 38개 + 워크플로 커맨드 18개. 디스커버리, 전략, 실행, 성장, 툴킷.",
       "source": "./pm",
       "category": "product-management"
+    },
+    {
+      "name": "autostay-marketing",
+      "description": "마케팅 스킬 31개. SEO, CRO, 카피라이팅, 이메일, 광고, 성장/리텐션. 오토스테이 도메인 맞춤.",
+      "source": "./marketing",
+      "category": "marketing"
     }
   ]
 }
