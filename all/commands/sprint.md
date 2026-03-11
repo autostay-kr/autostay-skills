@@ -1,1 +1,0 @@
-../../pm/commands/sprint.md

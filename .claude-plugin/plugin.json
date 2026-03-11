@@ -1,17 +1,15 @@
 {
   "name": "autostay-skills",
   "version": "2.0.0",
-  "description": "Autostay Team Skills Marketplace — common, pm, server, all 플러그인 제공",
+  "description": "Autostay Team Skills Marketplace — common (훅 + Git 커맨드), pm (38 스킬 + 18 커맨드)",
   "author": {
     "name": "Autostay"
   },
   "keywords": [
     "autostay",
     "product-management",
-    "engineering",
-    "nestjs",
-    "graphql",
-    "prisma"
+    "hooks",
+    "git-workflow"
   ],
   "license": "MIT"
 }

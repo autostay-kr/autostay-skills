@@ -1,1 +1,0 @@
-../../pm/commands/plan-okrs.md

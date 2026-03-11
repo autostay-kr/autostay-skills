@@ -1,1 +1,0 @@
-../../common/commands/commit-push-pr.md

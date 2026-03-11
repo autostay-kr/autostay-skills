@@ -1,16 +1,14 @@
 # Autostay Skills
 
 Autostay 팀 전용 Claude Code 플러그인 마켓플레이스.
-역할에 맞는 플러그인을 선택 설치하거나, 전체를 한번에 설치할 수 있습니다.
+자체 제작 스킬 + 커맨드 + 보호 훅을 제공합니다.
 
 ## 플러그인 목록
 
 | 플러그인 | 대상 | 내용 |
 |----------|------|------|
-| **autostay-all** | 전체 (한번에) | 아래 3개 전부 포함 (50 스킬, 21 커맨드, 보호 훅) |
-| **autostay-common** | 전체 | 보호 훅 + Git 워크플로 커맨드 3개 + find-skills |
+| **autostay-common** | 전체 | 보호 훅 (main 보호, 민감파일 차단) + Git 워크플로 커맨드 3개 |
 | **autostay-pm** | PM | PM 스킬 38개 + PM 커맨드 18개 |
-| **autostay-server** | 백엔드 | NestJS, GraphQL, Prisma, MySQL, Redis, Kafka, TDD 스킬 11개 |
 
 ## 설치
 
@@ -18,30 +16,68 @@ Autostay 팀 전용 Claude Code 플러그인 마켓플레이스.
 # 1. 마켓플레이스 등록 (최초 1회)
 claude plugin marketplace add autostay-kr/autostay-skills
 
-# 2-A. 전체 설치 (권장)
-claude plugin install autostay-skills@autostay-all
-
-# 2-B. 역할별 설치
-claude plugin install autostay-skills@autostay-common   # 필수
-claude plugin install autostay-skills@autostay-server    # 백엔드
+# 2. 플러그인 설치
+claude plugin install autostay-skills@autostay-common   # 전원 필수
 claude plugin install autostay-skills@autostay-pm        # PM
 ```
+
+## 권장 3rd party 스킬 (엔지니어링)
+
+아래 스킬은 마켓플레이스에서 직접 설치하세요. 원본 업데이트가 자동 반영됩니다.
+
+```bash
+# 백엔드 개발자 권장
+claude skill install find-skills
+claude skill install nestjs-best-practices
+claude skill install graphql-architect
+claude skill install graphql-schema
+claude skill install apollo-server
+claude skill install prisma-cli
+claude skill install prisma-client-api
+claude skill install mysql
+claude skill install redis-development
+claude skill install kafka-development
+claude skill install docker-deployment
+claude skill install tdd
+```
+
+> **Note**: 서버 프로젝트 전용 스킬 (dashboard-builder, dataloader-generator 등 11개)은
+> `autostay-server` 레포의 `.claude/skills/`에 있습니다.
 
 ## 업데이트
 
 ```bash
-claude plugin update autostay-skills@autostay-all
+# Autostay 플러그인 업데이트
+claude plugin update autostay-skills@autostay-common
+claude plugin update autostay-skills@autostay-pm
 ```
 
 ## 구조
 
 ```
 autostay-skills/
-├── common/          ← 보호 훅 + Git 커맨드 + find-skills
-├── pm/              ← PM 스킬 38개 + 커맨드 18개
-├── server/          ← 엔지니어링 스킬 11개
-└── all/             ← 위 3개 전체 (symlinks)
+├── common/              ← 보호 훅 + Git 워크플로 커맨드
+│   ├── commands/        (3개: commit-push-pr, commit-push-review-fix, review-and-fix)
+│   └── hooks/           (protect-git.sh, protect-files.sh)
+└── pm/                  ← PM 스킬 + 커맨드
+    ├── skills/          (38개)
+    └── commands/        (18개)
 ```
+
+## 보호 훅
+
+| 훅 | 트리거 | 동작 |
+|---|---|---|
+| `protect-git.sh` | Bash | main 브랜치 커밋/푸시 차단, force push/hard reset 차단 |
+| `protect-files.sh` | Write\|Edit | .env, credentials, *.pem, *.key 수정 차단 |
+
+## Git 워크플로 커맨드
+
+| 커맨드 | 설명 |
+|---|---|
+| `/commit-push-pr` | 커밋 → 푸시 → PR 생성 |
+| `/commit-push-review-fix` | 커밋 → PR → 코드 리뷰 → 수정 |
+| `/review-and-fix` | PR 리뷰 코멘트 확인 → 수정 → 푸시 |
 
 ## PM 커맨드 (18개)
 
@@ -79,36 +115,24 @@ autostay-skills/
 | `/north-star` | North Star Metric + 입력 지표 정의 |
 | `/review-feedback` | 구독자/파트너 피드백 → 품질 분석 → 개선안 |
 
-## Git 워크플로 커맨드 (3개)
+## PM 스킬 (38개)
 
-| 커맨드 | 설명 |
-|---|---|
-| `/commit-push-pr` | 커밋 → 푸시 → PR 생성 |
-| `/commit-push-review-fix` | 커밋 → PR → 코드 리뷰 → 수정 |
-| `/review-and-fix` | PR 리뷰 코멘트 확인 → 수정 → 푸시 |
+커맨드 없이도 대화 중 자동 활성화됩니다.
 
-## 엔지니어링 스킬 (11개)
+### Discovery (10)
+brainstorm-ideas-existing, identify-assumptions-existing, prioritize-assumptions, prioritize-features, analyze-feature-requests, opportunity-solution-tree, interview-script, summarize-interview, user-personas, customer-journey-map
 
-| 스킬 | 설명 |
-|---|---|
-| `apollo-server` | Apollo Server 5.x 가이드 |
-| `docker-deployment` | Docker 컨테이너화 및 배포 |
-| `graphql-architect` | GraphQL 스키마 설계, Federation, 구독 |
-| `graphql-schema` | GraphQL 스키마 베스트 프랙티스 |
-| `kafka-development` | Kafka 이벤트 스트리밍 베스트 프랙티스 |
-| `mysql` | MySQL/InnoDB 스키마, 인덱싱, 쿼리 튜닝 |
-| `nestjs-best-practices` | NestJS 아키텍처 패턴 |
-| `prisma-cli` | Prisma CLI 커맨드 레퍼런스 |
-| `prisma-client-api` | Prisma Client API 레퍼런스 |
-| `redis-development` | Redis 데이터 구조, 성능 최적화 |
-| `tdd` | TDD red-green-refactor |
+### Strategy (7)
+product-strategy, product-vision, pricing-strategy, lean-canvas, gtm-strategy, beachhead-segment, competitive-battlecard
 
-## 보호 훅
+### Execution (10)
+create-prd, brainstorm-okrs, sprint-plan, release-notes, user-stories, job-stories, test-scenarios, pre-mortem, retro, prioritization-frameworks
 
-| 훅 | 트리거 | 동작 |
-|---|---|---|
-| `protect-git.sh` | Bash | main 브랜치 커밋/푸시 차단, force push/hard reset 차단 |
-| `protect-files.sh` | Write\|Edit | .env, credentials, *.pem, *.key 수정 차단 |
+### Growth (8)
+north-star-metric, metrics-dashboard, cohort-analysis, ab-test-analysis, sql-queries, marketing-ideas, subscription-health, retention-playbook
+
+### Toolkit (3)
+grammar-check, partner-onboarding, service-quality-review
 
 ## 기반
 

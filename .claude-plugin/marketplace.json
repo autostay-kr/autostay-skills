@@ -8,14 +8,8 @@
   },
   "plugins": [
     {
-      "name": "autostay-all",
-      "description": "All-in-One: PM 38 + 엔지니어링 11 + 공통 1 스킬, 21 커맨드, 보호 훅",
-      "source": "./all",
-      "category": "team"
-    },
-    {
       "name": "autostay-common",
-      "description": "공통: 보호 훅 + Git 워크플로 커맨드 + find-skills",
+      "description": "공통: 보호 훅 (main 보호, 민감파일 차단) + Git 워크플로 커맨드 3개",
       "source": "./common",
       "category": "workflow"
     },
@@ -24,12 +18,6 @@
       "description": "PM: 38개 스킬 + 18개 워크플로 커맨드",
       "source": "./pm",
       "category": "product-management"
-    },
-    {
-      "name": "autostay-server",
-      "description": "Server: NestJS, GraphQL, Prisma, MySQL, Redis, Kafka, TDD 스킬 11개",
-      "source": "./server",
-      "category": "engineering"
     }
   ]
 }

@@ -1,1 +1,0 @@
-../../pm/commands/discover.md
