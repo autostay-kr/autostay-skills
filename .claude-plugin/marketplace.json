@@ -1,21 +1,15 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "autostay-skills",
-  "version": "2.0.0",
-  "description": "Autostay Team Skills",
+  "version": "2.1.0",
+  "description": "Autostay PM Skills",
   "owner": {
     "name": "Autostay"
   },
   "plugins": [
     {
-      "name": "autostay-common",
-      "description": "공통: 보호 훅 (main 보호, 민감파일 차단) + Git 워크플로 커맨드 3개",
-      "source": "./common",
-      "category": "workflow"
-    },
-    {
       "name": "autostay-pm",
-      "description": "PM: 38개 스킬 + 18개 워크플로 커맨드",
+      "description": "PM 스킬 38개 + 워크플로 커맨드 18개. 디스커버리, 전략, 실행, 성장, 툴킷.",
       "source": "./pm",
       "category": "product-management"
     }

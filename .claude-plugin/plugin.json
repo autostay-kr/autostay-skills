@@ -1,15 +1,16 @@
 {
   "name": "autostay-skills",
-  "version": "2.0.0",
-  "description": "Autostay Team Skills Marketplace — common (훅 + Git 커맨드), pm (38 스킬 + 18 커맨드)",
+  "version": "2.1.0",
+  "description": "Autostay PM Skills — 38개 PM 스킬 + 18개 워크플로 커맨드. O2O 세차 구독 서비스.",
   "author": {
     "name": "Autostay"
   },
   "keywords": [
     "autostay",
     "product-management",
-    "hooks",
-    "git-workflow"
+    "pm",
+    "car-wash",
+    "subscription"
   ],
   "license": "MIT"
 }

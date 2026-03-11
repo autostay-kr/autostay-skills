@@ -1,115 +1,39 @@
-# Autostay Skills
+# Autostay PM Skills
 
-Autostay 팀 전용 Claude 플러그인 마켓플레이스.
-자체 제작 스킬 + 커맨드 + 보호 훅을 제공합니다.
+Autostay PM 전용 Claude 플러그인. 38개 스킬 + 18개 워크플로 커맨드.
 
-## 플러그인 목록
-
-| 플러그인 | 대상 | 내용 |
-|----------|------|------|
-| **autostay-common** | 개발자 전체 | 보호 훅 (main 보호, 민감파일 차단) + Git 워크플로 커맨드 3개 |
-| **autostay-pm** | PM / 전체 | PM 스킬 38개 + PM 커맨드 18개 |
+> 개발자용 훅/커맨드는 [autostay-dev-skills](https://github.com/autostay-kr/autostay-dev-skills) (private)에 있습니다.
 
 ## 설치
 
-### Claude Cowork (비개발자 권장)
+### Claude Cowork (권장)
 
 1. 좌측 하단 **Customize** 클릭
 2. **Browse plugins** → **Personal** → **+**
 3. **Add marketplace from GitHub** 선택
 4. `autostay-kr/autostay-skills` 입력
-5. 원하는 플러그인 **Install**
+5. **autostay-pm** Install
 
 ### Claude Code (CLI)
 
 ```bash
-# 1. 마켓플레이스 등록 (최초 1회)
 claude plugin marketplace add autostay-kr/autostay-skills
-
-# 2. 플러그인 설치
-claude plugin install autostay-skills@autostay-common   # 개발자 필수
-claude plugin install autostay-skills@autostay-pm        # PM
+claude plugin install autostay-skills@autostay-pm
 ```
 
-> **Note**: `autostay-server` 레포에는 `extraKnownMarketplaces`가 설정되어 있어
-> 레포 클론 후 마켓플레이스가 자동 등록됩니다. Step 1 생략 가능.
+## 빠른 시작
 
-## 권장 3rd party 스킬
-
-마켓플레이스에서 직접 설치하세요. 원본 업데이트가 자동 반영됩니다.
-
-### Common (전원 권장)
-
-```bash
-claude skill install find-skills
-claude skill install tdd
-claude skill install docker-deployment
-```
-
-### Backend (백엔드 개발자)
-
-```bash
-claude skill install nestjs-best-practices
-claude skill install graphql-architect
-claude skill install graphql-schema
-claude skill install apollo-server
-claude skill install prisma-cli
-claude skill install prisma-client-api
-claude skill install mysql
-claude skill install redis-development
-claude skill install kafka-development
-```
-
-> **Note**: 서버 프로젝트 전용 스킬 (dashboard-builder, dataloader-generator 등 11개)은
-> `autostay-server` 레포의 `.claude/skills/`에 있습니다.
-
-### Frontend (프론트엔드 개발자)
-
-```bash
-claude skill install vercel-react-best-practices
-claude skill install nextjs-app-router
-claude skill install tailwindcss
-claude skill install typescript-strict
-```
-
-> **Note**: 프론트엔드 프로젝트 전용 스킬은 해당 레포의 `.claude/skills/`에 추가 예정.
-
-## 업데이트
-
-```bash
-# Autostay 플러그인 업데이트
-claude plugin update autostay-skills@autostay-common
-claude plugin update autostay-skills@autostay-pm
-```
-
-## 구조
-
-```
-autostay-skills/
-├── common/              ← 보호 훅 + Git 워크플로 커맨드
-│   ├── commands/        (3개: commit-push-pr, commit-push-review-fix, review-and-fix)
-│   └── hooks/           (protect-git.sh, protect-files.sh)
-└── pm/                  ← PM 스킬 + 커맨드
-    ├── skills/          (38개)
-    └── commands/        (18개)
-```
-
-## 보호 훅
-
-| 훅 | 트리거 | 동작 |
+| 하고 싶은 일 | 커맨드 | 예시 |
 |---|---|---|
-| `protect-git.sh` | Bash | main 브랜치 커밋/푸시 차단, force push/hard reset 차단 |
-| `protect-files.sh` | Write\|Edit | .env, credentials, *.pem, *.key 수정 차단 |
+| 새 기능 아이디어 발굴 | `/discover` | `/discover 프리미엄 디테일링 구독` |
+| PRD 작성 | `/write-prd` | `/write-prd 다중 차량 가족 플랜` |
+| 구독 가격 설계 | `/pricing` | `/pricing 월간/연간 티어 재설계` |
+| 구독 성장 분석 | `/growth` | `/growth 월간 이탈률 8% 문제` |
+| 경쟁사 분석 | `/battlecard` | `/battlecard 세차왕 vs Autostay` |
+| OKR 수립 | `/plan-okrs` | `/plan-okrs 2026 Q2` |
+| 유저 스토리 작성 | `/write-stories` | `/write-stories user 예약 시스템 개선` |
 
-## Git 워크플로 커맨드
-
-| 커맨드 | 설명 |
-|---|---|
-| `/commit-push-pr` | 커밋 → 푸시 → PR 생성 |
-| `/commit-push-review-fix` | 커밋 → PR → 코드 리뷰 → 수정 |
-| `/review-and-fix` | PR 리뷰 코멘트 확인 → 수정 → 푸시 |
-
-## PM 커맨드 (18개)
+## 커맨드 (18개)
 
 ### Discovery
 | 커맨드 | 설명 |
@@ -145,7 +69,7 @@ autostay-skills/
 | `/north-star` | North Star Metric + 입력 지표 정의 |
 | `/review-feedback` | 구독자/파트너 피드백 → 품질 분석 → 개선안 |
 
-## PM 스킬 (38개)
+## 스킬 (38개)
 
 커맨드 없이도 대화 중 자동 활성화됩니다.
 
@@ -166,7 +90,7 @@ grammar-check, partner-onboarding, service-quality-review
 
 ## 기반
 
-PM 스킬: [pm-skills](https://github.com/phuryn/pm-skills) (Paweł Huryn) 기반, Autostay 도메인 커스터마이징.
+[pm-skills](https://github.com/phuryn/pm-skills) (Paweł Huryn) 기반, Autostay 도메인 커스터마이징.
 
 ## 라이선스
 
