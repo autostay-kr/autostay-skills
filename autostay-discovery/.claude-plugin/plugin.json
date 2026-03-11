@@ -1,0 +1,16 @@
+{
+  "name": "autostay-discovery",
+  "version": "1.0.0",
+  "description": "Autostay product discovery skills: ideation for car wash subscription features, assumption testing, feature prioritization, subscriber/partner interviews, personas, and journey maps.",
+  "author": {
+    "name": "Autostay"
+  },
+  "keywords": [
+    "product-management",
+    "discovery",
+    "autostay",
+    "car-wash",
+    "subscription"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "autostay-execution",
+  "version": "1.0.0",
+  "description": "Autostay execution skills: PRDs with O2O operations, OKRs for subscription business, sprints, user/job stories for subscribers and partners, and prioritization frameworks.",
+  "author": {
+    "name": "Autostay"
+  },
+  "keywords": [
+    "product-management",
+    "execution",
+    "autostay",
+    "prd",
+    "sprint"
+  ],
+  "license": "MIT"
+}

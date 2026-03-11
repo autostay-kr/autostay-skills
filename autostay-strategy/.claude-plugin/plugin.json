@@ -1,0 +1,16 @@
+{
+  "name": "autostay-strategy",
+  "version": "1.0.0",
+  "description": "Autostay product strategy skills: subscription business strategy, pricing plan design, regional expansion GTM, and competitive analysis for O2O car wash market.",
+  "author": {
+    "name": "Autostay"
+  },
+  "keywords": [
+    "product-management",
+    "strategy",
+    "autostay",
+    "subscription",
+    "go-to-market"
+  ],
+  "license": "MIT"
+}
