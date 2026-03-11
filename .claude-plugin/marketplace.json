@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "autostay-skills",
+  "version": "1.0.0",
+  "description": "Autostay PM Skills",
+  "owner": {
+    "name": "Autostay"
+  },
+  "plugins": [
+    {
+      "name": "autostay-skills",
+      "description": "O2O 세차 구독 서비스를 위한 38개 PM 스킬과 18개 워크플로",
+      "source": "./",
+      "category": "product-management"
+    }
+  ]
+}
