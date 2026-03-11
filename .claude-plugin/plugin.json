@@ -1,14 +1,18 @@
 {
   "name": "autostay-skills",
-  "version": "2.1.0",
-  "description": "Autostay PM Skills — 38개 PM 스킬 + 18개 워크플로 커맨드. O2O 세차 구독 서비스.",
+  "version": "3.0.0",
+  "description": "Autostay Skills — PM (38 스킬 + 18 커맨드) + Marketing (31 스킬). O2O 세차 구독 서비스.",
   "author": {
     "name": "Autostay"
   },
   "keywords": [
     "autostay",
     "product-management",
-    "pm",
+    "marketing",
+    "seo",
+    "cro",
+    "copywriting",
+    "growth",
     "car-wash",
     "subscription"
   ],

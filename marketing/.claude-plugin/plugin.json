@@ -1,0 +1,20 @@
+{
+  "name": "autostay-marketing",
+  "version": "1.0.0",
+  "description": "Autostay Marketing — 31개 마케팅 스킬. SEO, CRO, 카피라이팅, 이메일, 광고, 성장/리텐션. O2O 세차 구독 서비스 맞춤.",
+  "author": {
+    "name": "Autostay"
+  },
+  "keywords": [
+    "autostay",
+    "marketing",
+    "seo",
+    "cro",
+    "copywriting",
+    "growth",
+    "retention",
+    "car-wash",
+    "subscription"
+  ],
+  "license": "MIT"
+}
